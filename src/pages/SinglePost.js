@@ -17,14 +17,16 @@ import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
 import MyPopup from '../utils/MyPopup';
 
-function SinglePost(props, args = {}) {
+function SinglePost(props) {
   const postId = props.match.params.postId;
   const { user } = useContext(AuthContext);
   const commentInputRef = useRef(null);
 
   const [comment, setComment] = useState('');
 
-  const { data: { getPost } = args } = useQuery(FETCH_POST_QUERY, {
+  const {
+    data: { getPost },
+  } = useQuery(FETCH_POST_QUERY, {
     variables: {
       postId,
     },
