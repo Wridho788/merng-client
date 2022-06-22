@@ -15,7 +15,8 @@ import {
 import { AuthContext } from '../context/auth';
 import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
-import MyPopup from '../utils/MyPopup';
+import MyPopup from '../util/MyPopup';
+import { FETCH_POSTS_QUERY } from '../util/graphql'; //optional
 
 function SinglePost(props) {
   const postId = props.match.params.postId;
